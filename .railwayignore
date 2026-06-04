@@ -1,0 +1,4 @@
+jobs.db
+resume_outputs/
+.streamlit/secrets.toml
+templates/base_resume.txt

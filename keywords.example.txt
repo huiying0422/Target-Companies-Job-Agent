@@ -1,0 +1,8 @@
+# Copy to keywords.txt (one term per line). Lines starting with # are ignored.
+# Job postings are matched when any keyword appears in title, department, or description.
+
+machine learning
+data scientist
+ml engineer
+python
+sql

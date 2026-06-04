@@ -1,0 +1,47 @@
+name: Job Check
+
+on:
+  schedule:
+    - cron: '0 14 * * 1-5'   # 9am Chicago CDT  (UTC-5 in winter -> adjust to 0 13 in Nov-Mar)
+    - cron: '0 18 * * 1-5'   # 1pm Chicago CDT
+  workflow_dispatch:
+
+jobs:
+  check-jobs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Download jobs.db artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: jobs-db
+        continue-on-error: true
+
+      - name: Seed and update companies
+        run: python db_seed.py
+
+      - name: Run job agent
+        env:
+          GMAIL_FROM:         ${{ secrets.GMAIL_FROM }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          NOTIFY_EMAIL:       ${{ secrets.NOTIFY_EMAIL }}
+          ANTHROPIC_API_KEY:  ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python main.py
+
+      - name: Upload jobs.db artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jobs-db
+          path: jobs.db
+          retention-days: 7

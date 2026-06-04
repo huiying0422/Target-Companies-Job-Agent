@@ -1,0 +1,12 @@
+# Copy to config/candidate_profile.txt and replace with your background.
+# Used by ranker.py for Claude FIT / APPLY_LATER / NOT_FIT verdicts (requires ANTHROPIC_API_KEY).
+
+Your Name is a Software Engineer with 3+ years building production systems.
+
+Skills: Python, SQL, machine learning basics, APIs, Git.
+
+Target roles: ML Engineer or Software Engineer at product-focused companies.
+
+Known gaps: (optional — e.g. limited experience with large-scale deep learning)
+
+Key differentiator: (optional — what makes you a strong fit for your target roles)

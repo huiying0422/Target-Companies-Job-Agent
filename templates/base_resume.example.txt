@@ -1,0 +1,22 @@
+YOUR NAME
+City, ST | your.email@example.com | yourwebsite.com
+
+PROFESSIONAL SUMMARY
+Brief summary tailored to your target roles. Keep this section concise.
+
+TECHNICAL SKILLS
+Languages: Python, SQL
+ML: scikit-learn, feature engineering
+Tools: Git, CI/CD
+
+WORK EXPERIENCE
+
+Company Name — Role Title
+Month Year – Present | City, ST
+- Achievement with measurable impact
+- Another bullet highlighting relevant skills
+
+EDUCATION
+
+Degree — University Name
+Graduated Year
