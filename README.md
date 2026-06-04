@@ -1,5 +1,29 @@
 # Target Companies Job Agent
 
+## Why I built this
+
+I got tired of manually checking 60+ company career pages every week.
+LinkedIn and Indeed are noisy — they show you irrelevant roles and you
+still miss new postings from the companies you actually care about.
+
+This tool checks your target companies daily, filters for roles matching
+your keywords, uses Claude AI to score your fit, and generates a tailored
+PDF resume for each application — automatically.
+
+If you already know which companies you want to work at, this is for you.
+
+## What you need to get started
+
+Before running anything, prepare these 5 things:
+
+1. **Your resume** — plain text format (copy from your Word doc)
+2. **Your target companies** — just the names, the tool handles the rest
+3. **Your notification email** — where job alerts get sent
+4. **Your skills + target role** — used by AI to score your fit
+5. **Your search keywords** — e.g. `machine learning, AI engineer, python`
+
+---
+
 A template for scraping jobs from company career boards (Greenhouse, Lever, Ashby), filtering by your keywords, optional Claude-powered fit scoring, email alerts, and a Streamlit dashboard with resume tailoring.
 
 **No API keys or personal data belong in this repository.** Secrets live in `.env`, GitHub Actions secrets, Streamlit/Railway environment variables, or your machine only.
